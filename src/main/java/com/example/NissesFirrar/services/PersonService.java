@@ -20,7 +20,7 @@ public class PersonService {
 
     public Person create(Person person) { return save(person); }
     public Person update(Person person, Long id) {
-        return personRepository.findByName(name)
+        return personRepository.findById(id)
                 .map(p->){
                    p.setName()(person.getName());
                    return save(p);
