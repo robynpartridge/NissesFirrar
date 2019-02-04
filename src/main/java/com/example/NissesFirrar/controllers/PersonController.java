@@ -2,7 +2,6 @@ package com.example.NissesFirrar.controllers;
 
 import com.example.NissesFirrar.exceptions.ResourceNotFoundException;
 import com.example.NissesFirrar.models.Person;
-import com.example.NissesFirrar.models.Products;
 import com.example.NissesFirrar.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +37,7 @@ public class PersonController {
     }
 
     @PutMapping(path = "/person/{id}")
-    public ResponseEntity<Products> update(@PathVariable(name = "id") Long id,
+    public ResponseEntity<Person> update(@PathVariable(name = "id") Long id,
                                            @RequestBody @Valid Person person) {
         Person updatedPerson = personService.update(person, id);
         return new ResponseEntity<>(updatedPerson, HttpStatus.OK);
