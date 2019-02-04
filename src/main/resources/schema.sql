@@ -4,3 +4,8 @@ create table products (
   dop date,
   status bit,
 );
+
+create table person {
+  `id` int(10) unsigned not null AUTO_INCREMENT,
+  name varchar(50),
+};
