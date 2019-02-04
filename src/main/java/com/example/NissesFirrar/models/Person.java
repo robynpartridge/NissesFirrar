@@ -3,7 +3,7 @@ package com.example.NissesFirrar.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="products")
+@Table(name="person")
 public class Person {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

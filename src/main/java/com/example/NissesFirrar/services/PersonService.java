@@ -21,10 +21,11 @@ public class PersonService {
     public Person create(Person person) { return save(person); }
     public Person update(Person person, Long id) {
         return personRepository.findById(id)
-                .map(p->{
-                   p.setName()(person.getName());
-                   return save(p);
-        }.orElseThrow(ResourceNotFoundException::new);
+                .map(p-> {
+                    p.setName(person.getName());
+                    return save(p);
+                    }
+                ).orElseThrow(ResourceNotFoundException::new);
     }
     public void delete(Long id) {
         personRepository.deleteById(id);
