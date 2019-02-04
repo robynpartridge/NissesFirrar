@@ -6,17 +6,17 @@ import javax.persistence.*;
 @Table(name="person")
 public class Person {
     @Id
+    @Column(name = "person_id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "products_id")
-    private Products products;
-    @Column(name = "product_id")
-    private int product_id;
+ /**   @OneToMany
+    @JoinColumn(name = "product_id")
+    private Products products;**/
+
 
     public Person() {
     }
