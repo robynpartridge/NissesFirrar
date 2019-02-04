@@ -12,6 +12,12 @@ public class Person {
     @Column(name = "name")
     private String name;
 
+    @OneToMany
+    @JoinColumn(name = "products_id")
+    private Products products;
+    @Column(name = "product_id")
+    private int product_id;
+
     public Person() {
     }
 
@@ -31,3 +37,4 @@ public class Person {
         this.id = id;
     }
 }
+
