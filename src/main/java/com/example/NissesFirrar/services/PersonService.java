@@ -17,7 +17,6 @@ public class PersonService {
     public List<Person> all() { return personRepository.findAll(); }
     public Optional<Person> getById(Long id) { return personRepository.findById(id); }
     public List<Person> getByName(String name) { return personRepository.findByName(name); }
-
     public Person create(Person person) { return save(person); }
     public Person update(Person person, Long id) {
         return personRepository.findById(id)

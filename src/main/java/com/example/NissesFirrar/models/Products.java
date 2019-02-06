@@ -17,6 +17,10 @@ public class Products {
     @Column(name = "status")
     private Boolean status;
 
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private Person person;
+
     public Products() {
     }
 

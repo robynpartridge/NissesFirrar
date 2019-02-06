@@ -1,17 +1,20 @@
 package com.example.NissesFirrar.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="person")
 public class Person {
     @Id
-    @Column(name = "person_id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "person")
+    private List<Products> products;
 
  /**   @OneToMany
     @JoinColumn(name = "product_id")
@@ -35,6 +38,14 @@ public class Person {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Products> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Products> products) {
+        this.products = products;
     }
 }
 

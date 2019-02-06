@@ -1,7 +1,6 @@
 create table person (
   `id` int(10) unsigned not null AUTO_INCREMENT,
   name varchar(50),
-  product_id int,
   constraint pk_person primary key(id)
 );
 
