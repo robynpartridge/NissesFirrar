@@ -16,13 +16,7 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<Products> products;
 
- /**   @OneToMany
-    @JoinColumn(name = "product_id")
-    private Products products;**/
-
-
-    public Person() {
-    }
+    public Person() { }
 
     public String getName() {
         return name;
@@ -40,12 +34,8 @@ public class Person {
         this.id = id;
     }
 
-    public List<Products> getProducts() {
-        return products;
-    }
+    public List<Products> getProducts() { return products; }
 
-    public void setProducts(List<Products> products) {
-        this.products = products;
-    }
+    public void setProducts(List<Products> products) { this.products = products; }
 }
 
