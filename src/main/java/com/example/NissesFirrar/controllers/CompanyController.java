@@ -23,7 +23,7 @@ public class CompanyController {
 
     @GetMapping(path="/company")
     public List<Company> get(@RequestParam(value="name", required = false)String name) {
-        return name == null ? CompanyService.all(): companyService.getByName(name);
+        return name == null ? companyService.all(): companyService.getByName(name);
     }
     @GetMapping(path = "/company/{id}")
     public Company getById(@PathVariable(name = "id") Long id) {
