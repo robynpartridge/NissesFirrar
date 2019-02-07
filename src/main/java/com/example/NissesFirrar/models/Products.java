@@ -21,8 +21,7 @@ public class Products {
     @JoinColumn(name = "person_id")
     private Person person;
 
-    public Products() {
-    }
+    public Products() { }
 
     public Products(String serialNbr) {
         this.serialNbr=serialNbr;
