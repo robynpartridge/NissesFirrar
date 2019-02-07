@@ -3,6 +3,7 @@ package com.example.NissesFirrar.models;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="products")
@@ -23,7 +24,7 @@ public class Products {
     private Person person;
 
     @ManyToMany(mappedBy = "products")
-    private List<Company> company;
+    private Set<Company> company;
 
     public Products() { }
 

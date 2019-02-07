@@ -2,6 +2,7 @@ package com.example.NissesFirrar.models;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "company")
@@ -16,8 +17,13 @@ public class Company {
     @Column(name="name")
     private String name;
 
-    @ManyToMany(mappedBy = "company")
-    private List<Products> products;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name="products_company",
+            joinColumns = { @JoinColumn(name = "products_id") },
+            inverseJoinColumns = { @JoinColumn(name = "company_id") }
+    )
+    private Set<Products> products;
 
     public Company(){ }
 
@@ -43,11 +49,11 @@ public class Company {
         this.name = name;
     }
 
-    public List<Products> getProducts() {
+    public Set<Products> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Products> products) {
+    public void setProducts(Set<Products> products) {
         this.products = products;
     }
 }
