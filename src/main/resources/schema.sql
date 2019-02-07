@@ -10,6 +10,14 @@ create table products (
   dop date,
   status bit,
   person_id int,
+  company_id int,
   constraint pk_products primary key(id),
   constraint fk_products foreign key(person_id) references person(id)
+  constraint fk_company foreign key(company_id) references company(id)
 );
+create table company (
+  `id` int(10) unsigned not null AUTO_INCREMENT,
+  org_nbr int(10),
+  name varchar(50),
+  constraint pk_company primary key(id)
+)
