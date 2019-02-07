@@ -2,6 +2,7 @@ package com.example.NissesFirrar.models;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name="products")
@@ -20,6 +21,9 @@ public class Products {
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
+
+    @ManyToMany(mappedBy = "products")
+    private List<Company> company;
 
     public Products() { }
 

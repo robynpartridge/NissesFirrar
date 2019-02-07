@@ -17,11 +17,13 @@ public class CompanyService {
     public List<Company> all() { return companyRepository.findAll(); }
     public Optional<Company> getById(Long id) { return companyRepository.findById(id); }
     public List<Company> getByName(String name) { return companyRepository.findByName(name); }
+    public List<Company> getByOrgNbr(Long orgNbr) { return companyRepository.findByOrgNbr(orgNbr); }
     public Company create(Company company) { return save(company); }
     public Company update(Company company, Long id) {
         return companyRepository.findById(id)
                 .map(p-> {
                             p.setName(company.getName());
+                            p.setOrgNbr(company.getOrgNbr());
                             return save(p);
                         }
                 ).orElseThrow(ResourceNotFoundException::new);

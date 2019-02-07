@@ -35,6 +35,8 @@ public class ProductService {
         return productRepository.findById(id)
                 .map(p->{
                     p.setSerialNbr(products.getSerialNbr());
+                    p.setDop(products.getDop());
+                    p.setStatus(products.getStatus());
                     return save(p);
                         }
                 ).orElseThrow(ResourceNotFoundException::new);

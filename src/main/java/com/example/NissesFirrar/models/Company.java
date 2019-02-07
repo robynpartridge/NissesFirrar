@@ -12,29 +12,29 @@ public class Company {
     private Long id;
 
     @Column(name="org_nbr")
-    private Long ordNbr;
+    private Long orgNbr;
     @Column(name="name")
     private String name;
 
-    @OneToMany(mappedBy = "company")
+    @ManyToMany(mappedBy = "company")
     private List<Products> products;
 
-    public Company(){
-    }
+    public Company(){ }
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public Long getOrdNbr() {
-        return ordNbr;
+    public void setId(Long id) { this.id = id; }
+
+    public Long getOrgNbr() {
+        return orgNbr;
     }
 
-    public void setOrdNbr(Long ordNbr) {
-        this.ordNbr = ordNbr;
+    public void setOrgNbr(Long orgNbr) {
+        this.orgNbr = orgNbr;
     }
+
     public String getName() {
         return name;
     }
@@ -42,6 +42,7 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
     public List<Products> getProducts() {
         return products;
     }
@@ -49,5 +50,4 @@ public class Company {
     public void setProducts(List<Products> products) {
         this.products = products;
     }
-
 }
